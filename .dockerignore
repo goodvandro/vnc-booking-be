@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+*.log
+node_modules
+build
+.strapi
+Dockerfile
+docker-compose.yml
+README.md
+.dockerignore
