@@ -20,7 +20,7 @@ services:
       - vnc-booking-nt
 
   be:
-    container_name: vn-booking-be
+    container_name: vnc-booking-be
     build:
       context: .
       dockerfile: Dockerfile
