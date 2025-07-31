@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guest_house_bookings",
+  "info": {
+    "singularName": "guest-house-booking",
+    "pluralName": "guest-house-bookings",
+    "displayName": "Guest House Booking"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bookingId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "guests": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "specialRequests": {
+      "type": "text"
+    },
+    "checkIn": {
+      "type": "date",
+      "required": true
+    },
+    "checkOut": {
+      "type": "date",
+      "required": true
+    },
+    "totalPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "bookingStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "pending",
+      "enum": [
+        "pending",
+        "confirmed",
+        "cancelled",
+        "completed"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "guest_house": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::guest-house.guest-house"
+    }
+  }
+}
