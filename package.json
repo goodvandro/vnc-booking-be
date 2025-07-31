@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.18.0",
+    "@strapi/plugin-documentation": "^5.20.0",
     "@strapi/plugin-users-permissions": "5.18.0",
     "@strapi/strapi": "5.18.0",
     "pg": "8.8.0",
@@ -37,5 +38,6 @@
   "strapi": {
     "uuid": "402d9a0d-9e25-4fc2-9e96-11117f284044",
     "installId": "9443ddd0f0edfbd17f6e5f670de6250b4a19b78ca3150ade3fe3c8ac438a279a"
-  }
+  },
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
 }
