@@ -1,11 +1,70 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Production builds
+dist
+build
+.output
+.next
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# Strapi
+.cache
+exports
+*.cache
+build
+.strapi-updater.json
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Git
 .git
 .gitignore
-.env
-*.log
-node_modules
-build
-.strapi
-Dockerfile
-docker-compose.yml
 README.md
-.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
