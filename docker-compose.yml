@@ -51,6 +51,7 @@ services:
 
 volumes:
   vnc-booking-data:
+  uploads:
 
 networks:
   vnc-booking-nt:
