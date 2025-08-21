@@ -1,5 +1,5 @@
-# Use a imagem oficial do Node.js
-FROM node:18-alpine
+# Use a imagem oficial do Node.js (versão 20 para compatibilidade)
+FROM node:20-alpine
 
 # Instalar dependências do sistema necessárias
 RUN apk update && apk add --no-cache \
@@ -20,8 +20,8 @@ WORKDIR /opt/app
 # Copiar arquivos de dependências
 COPY package*.json ./
 
-# Instalar dependências
-RUN npm ci
+# Instalar dependências (usar npm install para resolver conflitos)
+RUN npm install
 
 # Copiar código da aplicação
 COPY . .
