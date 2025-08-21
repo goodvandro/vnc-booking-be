@@ -19,7 +19,7 @@ ENV PATH=/opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
 COPY package.json .
-RUN yarn install --no-cache
+RUN npm install --no-cache
 
 COPY . .
 RUN [ "npm", "run", "build" ]
