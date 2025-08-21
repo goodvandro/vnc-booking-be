@@ -41,6 +41,7 @@ services:
     volumes:
       - ./:/opt/app
       - /opt/app/node_modules
+      - uploads:/opt/app/public/uploads
     ports:
       - "${PORT}:1337"
     networks:
