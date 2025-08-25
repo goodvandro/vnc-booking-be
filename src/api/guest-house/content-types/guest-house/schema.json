@@ -34,7 +34,7 @@
       "required": true
     },
     "description": {
-      "type": "blocks",
+      "type": "richtext",
       "required": true
     },
     "images": {

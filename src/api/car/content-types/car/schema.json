@@ -32,10 +32,6 @@
       "type": "decimal",
       "required": true
     },
-    "description": {
-      "type": "blocks",
-      "required": true
-    },
     "images": {
       "type": "media",
       "multiple": true,
@@ -44,6 +40,10 @@
         "images",
         "files"
       ]
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
