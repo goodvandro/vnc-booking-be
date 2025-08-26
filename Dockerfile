@@ -17,21 +17,24 @@ RUN apk update && apk add --no-cache \
     make \
     g++
 
+# Instalar pnpm globalmente
+RUN npm install -g pnpm
+
 # Definir diretório de trabalho
 WORKDIR /opt/app
 
-# Copiar arquivos de dependências
-COPY package*.json ./
+# Copiar arquivos de dependências (incluir pnpm-lock.yaml)
+COPY package*.json pnpm-lock.yaml ./
 
-# Limpar cache do npm e instalar dependências
-RUN npm cache clean --force
+# Limpar cache e arquivos de lock antigos
+RUN pnpm store prune
 RUN rm -rf node_modules package-lock.json
 
-# Instalar sharp específico para Alpine Linux
-RUN npm install --platform=linux --arch=x64 --libc=musl sharp
+# Instalar sharp específico para Alpine Linux primeiro
+RUN pnpm add --save-exact sharp --config.target_platform=linux --config.target_arch=x64 --config.target_libc=musl
 
-# Instalar o restante das dependências
-RUN npm install
+# Instalar todas as dependências com pnpm
+RUN pnpm install --frozen-lockfile
 
 # Copiar código da aplicação
 COPY . .
@@ -43,4 +46,4 @@ RUN mkdir -p public/uploads
 EXPOSE 1337
 
 # Comando para desenvolvimento (com hot reload)
-CMD ["npm", "run", "develop"]
+CMD ["pnpm", "run", "develop"]

@@ -38,6 +38,9 @@ services:
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       APP_KEYS: ${APP_KEYS}
       NODE_ENV: ${NODE_ENV}
+      ADMIN_PATH: ${ADMIN_PATH}
+      PUBLIC_URL: ${PUBLIC_URL}
+      STRAPI_ADMIN_BACKEND_URL: ${STRAPI_ADMIN_BACKEND_URL}
     volumes:
       - ./:/opt/app
       - /opt/app/node_modules
@@ -48,6 +51,8 @@ services:
       - vnc-booking-nt
     depends_on:
       - db
+    # Comando usando pnpm
+    command: pnpm run develop
 
 volumes:
   vnc-booking-data:
