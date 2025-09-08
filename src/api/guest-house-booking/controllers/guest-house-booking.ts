@@ -3,7 +3,6 @@
  */
 
 import { factories } from "@strapi/strapi";
-import type { Core } from "@strapi/strapi";
 
 // Interface para os atributos da reserva
 interface BookingAttributes {
