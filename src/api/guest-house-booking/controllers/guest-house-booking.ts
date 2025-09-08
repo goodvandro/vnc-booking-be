@@ -3,7 +3,7 @@
  */
 
 import { factories } from "@strapi/strapi";
-import { Context } from "koa";
+import type { Core } from "@strapi/strapi";
 
 // Interface para os atributos da reserva
 interface BookingAttributes {
@@ -27,7 +27,7 @@ interface ApiResponse {
 export default factories.createCoreController(
   "api::guest-house-booking.guest-house-booking",
   ({ strapi }) => ({
-    async update(ctx: Context): Promise<ApiResponse> {
+    async update(ctx: any): Promise<ApiResponse> {
       try {
         console.log("🔄 Controller update chamado");
         console.log(
